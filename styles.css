@@ -220,6 +220,7 @@ Menu
   display: grid;
   gap: 1rem 2rem;
   max-width: 25rem;
+  padding: 1rem;
 }
 
 .menu-item:hover{
@@ -228,7 +229,11 @@ Menu
 
 @keyframes onHover{
   to{transform: scale(1.05);
-  z-index: 10;}
+  z-index: 10;
+  border: 0.05rem solid var(--clr-gold);
+  border-radius: var(--radius);
+
+}
 }
 .photo {
   object-fit: cover;

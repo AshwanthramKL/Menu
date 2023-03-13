@@ -85,7 +85,19 @@ window.addEventListener('DOMContentLoaded', () =>{
 // Filter Items
 filterBtns.forEach((btn)=>{
   btn.addEventListener('click', (e) =>{
-    console.log(e.currentTarget.dataset);
+   const category = e.currentTarget.dataset.id;
+   const menuCategory = menu.filter((menuItem) => {
+   if(menuItem.category === category){
+        return menuItem;  
+      }
+    });
+
+    if(category === 'all'){
+      displayMenuItems(menu);
+    }
+    else{
+      displayMenuItems(menuCategory);
+    }
     })
   });
 
@@ -110,7 +122,6 @@ function displayMenuItems(menuItems){
 
 
 
-  console.log();
   displayMenu = displayMenu.join("");
 
   sectionCenter.innerHTML = displayMenu;
