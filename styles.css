@@ -228,8 +228,7 @@ Menu
 
 @keyframes onHover{
   to{transform: scale(1.05);
-  z-index: 10;  
-  background-color: white;}
+  z-index: 10;}
 }
 .photo {
   object-fit: cover;
@@ -241,6 +240,7 @@ Menu
   display: flex;
   justify-content: space-between;
   border-bottom: 0.5px dotted var(--clr-grey-5);
+  cursor: pointer;
 }
 .item-info h4 {
   margin-bottom: 0.5rem;

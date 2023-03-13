@@ -75,10 +75,19 @@ const menu = [
 
 
 const sectionCenter = document.querySelector('.section-center');
+const filterBtns = document.querySelectorAll('.filter-btn');
 
+// Load Items
 window.addEventListener('DOMContentLoaded', () =>{
     displayMenuItems(menu);
 })
+
+// Filter Items
+filterBtns.forEach((btn)=>{
+  btn.addEventListener('click', (e) =>{
+    console.log(e.currentTarget.dataset);
+    })
+  });
 
 function displayMenuItems(menuItems){
   let displayMenu = menuItems.map((item) =>{
@@ -98,6 +107,8 @@ function displayMenuItems(menuItems){
     </div>
   </article>`
   });
+
+
 
   console.log();
   displayMenu = displayMenu.join("");
