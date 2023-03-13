@@ -221,6 +221,16 @@ Menu
   gap: 1rem 2rem;
   max-width: 25rem;
 }
+
+.menu-item:hover{
+  animation: onHover 0.5s both;
+}
+
+@keyframes onHover{
+  to{transform: scale(1.05);
+  z-index: 10;  
+  background-color: white;}
+}
 .photo {
   object-fit: cover;
   height: 200px;
