@@ -86,43 +86,49 @@ const sectionCenter = document.querySelector('.section-center');
 const btnContainer = document.querySelector('.btn-container');
 // Load Items
 window.addEventListener('DOMContentLoaded', () =>{
-    displayMenuItems(menu);
-    const categories = menu.reduce((values, item)=>{
-      if(!values.includes(item.category)){
-        values.push(item.category);
-      }
-      return values;
-    }, ['all']);
-
-    const categoryBtns = categories.map((category)=>{
-      return `
-      <button class="filter-btn" type="button" data-id=${category}>${category}</button>
-      `
-    }).join("");
-    console.log(categoryBtns);
-    btnContainer.innerHTML = categoryBtns;
+  displayMenuButtons();
+  displayMenuItems(menu);
   })
 
-const filterBtns = document.querySelectorAll('.filter-btn');
 
-// Filter Items
-filterBtns.forEach((btn)=>{
-  btn.addEventListener('click', (e) =>{
-   const category = e.currentTarget.dataset.id;
-   const menuCategory = menu.filter((menuItem) => {
-   if(menuItem.category === category){
-        return menuItem;  
+function displayMenuButtons(){
+  const categories = menu.reduce((values, item)=>{
+    if(!values.includes(item.category)){
+      values.push(item.category);
+    }
+    return values;
+  }, ['all']);
+
+  const categoryBtns = categories.map((category)=>{
+    return `
+    <button class="filter-btn" type="button" data-id=${category}>${category}</button>
+    `
+  }).join("");
+  console.log(categoryBtns);
+  btnContainer.innerHTML = categoryBtns;
+  
+  // Filter Items
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  filterBtns.forEach((btn)=>{
+    btn.addEventListener('click', (e) =>{
+     const category = e.currentTarget.dataset.id;
+     const menuCategory = menu.filter((menuItem) => {
+     if(menuItem.category === category){
+          return menuItem;  
+        }
+      });
+  
+      if(category === 'all'){
+        displayMenuItems(menu);
       }
+      else{
+        displayMenuItems(menuCategory);
+      }
+      });
     });
+}
 
-    if(category === 'all'){
-      displayMenuItems(menu);
-    }
-    else{
-      displayMenuItems(menuCategory);
-    }
-    })
-  });
 
 function displayMenuItems(menuItems){
   let displayMenu = menuItems.map((item) =>{
