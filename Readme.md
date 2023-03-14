@@ -21,20 +21,21 @@ Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
-- View the Menu.
+- View the Menu items.
+- View only categorical menu items on click of Menu buttons.
 
 
 ### Screenshot
 
 #### Full Screen
 ![Full screen](./images/Website_preview.jpg)
-#### Answer Display
-![Show answer screen](./images/Website_preview_2.jpg)
+#### Filter Display
+![Filtered items screen](./images/Filtered_item_view.jpg)
 
 ### Links
 
-- Solution URL: [Solution URL](https://github.com/AshwanthramKL/Frequent-Q-A)
-- Live Site URL: [Live site URL](https://ashwanthramkl.github.io/Frequent-Q-A/)
+- Solution URL: [Solution URL](https://github.com/AshwanthramKL/Menu)
+- Live Site URL: [Live site URL](https://ashwanthramkl.github.io/Menu/)
 
 ## My process
 
@@ -52,7 +53,7 @@ This project helped me recap over some concepts of CSS and JS such as  Event lis
 - classList
 - Class addition and removal
 - toggle
-- DOM tree traversing using parentElement
+- map()
 
 
 
